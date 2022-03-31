@@ -64,7 +64,7 @@ async def create(request: Request, background_task: BackgroundTasks): # id, quan
     )
     order.save()
 
-    background_task.add(order_completed, order)
+    background_task.add_task(order_completed, order)
 
     return order
 
