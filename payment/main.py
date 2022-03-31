@@ -72,28 +72,3 @@ def order_completed(order: Order):
     time.sleep(5)
     order.status = 'completed'
     order.save()
-
-# @app.get("/orders")
-# def all():
-#    return [format(pk) for pk in Order.all_pks()]
-
-
-# def format(pk: str):
-#    order = Order.get(pk)
-
-#    return {
-#       'id': order.pk,
-#       'name': order.name, 
-#       'price': order.price,
-#       'available_quantity': order.available_quantity,
-#    }
-
-
-# @app.get("/orders/{pk}")
-# def get(pk: str):
-#    return Order.get(pk)
-
-
-# @app.delete("/orders/{pk}")
-# def delete(pk: str):
-#    return Order.delete(pk)
