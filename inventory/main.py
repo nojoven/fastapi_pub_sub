@@ -7,7 +7,7 @@ app = FastAPI()
 
 app.add_middleware(
    CORSMiddleware,
-   allow_origins=["http://localhost:3000"],
+   allow_origins=["http://localhost:3000", "http://localhost:8001"],
    allow_methods=["*"],
    allow_headers=["*"],
 )
@@ -50,7 +50,7 @@ def create(product: Product):
 
 @app.get("/products/{pk}")
 def get(pk: str):
-   return Product.get(pk)
+   return format(pk)
 
 
 @app.delete("/products/{pk}")
